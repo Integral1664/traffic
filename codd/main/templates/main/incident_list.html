@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список происшествий</title>
+</head>
+<body>
+    <h1>Список происшествий</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Пользователь</th>
+                <th>Улица</th>
+                <th>Описание</th>
+                <th>Фотография</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for incident in incidents %}
+            <tr>
+                <td>{{ incident.id }}</td>
+                <td>{{ incident.user_id }}</td>
+                <td>{{ incident.street }}</td>
+                <td>{{ incident.description }}</td>
+                <td>
+
+                   <img src="{{ incident.photo.url }}" alt="Incident Photo">
+
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
